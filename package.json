@@ -15,13 +15,13 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bw70316/friend-finder/issues"
-  },
-  "scripts": {
-       "start": "node server.js"
-     },
+  },  
   "homepage": "https://github.com/bw70316/friend-finder#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2"
-  }
+  },
+  "scripts": {
+       "start": "node server.js"
+     }
 }
