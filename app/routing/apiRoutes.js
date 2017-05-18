@@ -24,18 +24,17 @@ module.exports = function (app) {
 			matchDifference: 40
 		};
 
-		//since the greatest difference in score is 4 for any question, the greatest difference for total is 40,
+		//^^since the greatest difference in score is 4 for any question, the greatest difference for total is 40,
 		//because there are 10 questions
+//this data should be pushed to the appropriate javascript array
 
 		var userData = req.body;
 		var userName= userData.name;
 		var userPhoto = user.photo;
 		var userScores = userData.scores;
 
-		//this data should be pushed to the appropriate javascript array
-
-		var totalDifference = 0;
-
+		
+		
 			// should loop through the friendsData array to get their scores
 
 		  for(var i = 0; i < [friendsData].length-1; i++) {
@@ -45,7 +44,7 @@ module.exports = function (app) {
 			//loop through that friends score and the users score and calculate the 
 			// absolute difference between the two and push that to the total difference variable set above
 
-		   for(var j = 0; j < 5; j++) {
+		   for(var j = 0; j < 10; j++) {
 
 		   	//found this on stackoverflow as well as github
 
@@ -62,7 +61,7 @@ module.exports = function (app) {
 
 	}
 
-			//should put the new friend from survey in databse, but of course it doesnt work with the modal
+			//should put the new friend from survey in databse, but it doesnt work with the modal, can't figure out why
 
 			friendsData.push(userData);
 
@@ -70,3 +69,6 @@ module.exports = function (app) {
 		res.json(greatMatch);
 	});
 };
+
+//I tried looking at a bunch of code and this is what I came up with, I don't understand why my modal is coming back 
+//undefined, but I tried messing with it a for a long time to no avail. At the very least I tried to make the code look good. 
