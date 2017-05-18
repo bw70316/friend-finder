@@ -23,7 +23,7 @@
 
   <body>
 
-
+<!--html code using bootstrap-->
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-3">Friend Finder -- Survey</h1>
@@ -204,14 +204,14 @@
         </div>
         <footer class="footer">
         <div class="container">
-          <p><a href="/api/friends">API Friends Link</a> | <a href="ADD GITHUB">Github Repo</a> </p>
+          <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/bw70316/friend-finder">Github Repo</a> </p>
         </div>
       </footer>
     </div>
 
       </div>
 
-  
+  <!--if you comment out my modal, the objects push to my api/friends, otherwise it doesnt, because i dont know anything about modals-->
     
 
  <div id="resultModal" class="modal fade" role="dialog">
@@ -242,7 +242,7 @@
       
 
 
-     
+     <!--got this from the example, initially my modal appeared on page load, this prevented that since the form had to validated-->
     
     <script type="text/javascript">
 
@@ -288,10 +288,10 @@
         var currentURL = window.location.origin;
         // AJAX post the data to the friends API. 
         $.post(currentURL + "/api/friends", userData, function(data){
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          //this is what should be displayed in the modal, but it is coming back as undefined
           $("#matchName").text(data.name);
           $('#matchImg').attr("src", data.photo);
-          $("#message").text("You should be friends with " + data.name);
+          $("#message").text("Your new best friend is " + data.name);
           $("#resultModal").modal("show");
         });
     }
