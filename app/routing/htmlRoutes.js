@@ -9,7 +9,7 @@ module.exports = function (app) {
 	});
 
 //app.use takes any link that isnt /survey and directs it to the HP
-	app.use( function(req, res) {
+	app.get('/' function(req, res) {
     	res.sendFile(path.join(__dirname + '/../public/home.html'));
 	});
 
